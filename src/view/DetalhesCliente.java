@@ -28,15 +28,7 @@ public class DetalhesCliente extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         nomeDetCliente = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        cpfDetCliente = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        estadoCivilDetPagamento = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        enderecoDetPagamento = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        cepDetPagamento = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        lblDadosCliente = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         descricaoDetPagamento = new javax.swing.JTextPane();
@@ -47,8 +39,7 @@ public class DetalhesCliente extends javax.swing.JFrame {
         vencimentoDetPagamento = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         btnEditarDetPagamento = new javax.swing.JButton();
-        btnExcluirDetPagamento = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnVoltarDetPagamento = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,23 +50,9 @@ public class DetalhesCliente extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         nomeDetCliente.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        nomeDetCliente.setText("Nome completo do cliente");
+        nomeDetCliente.setText("Nome do cliente");
 
-        jLabel4.setText("CPF:");
-
-        cpfDetCliente.setText("xxx.xxx.xxx-xx");
-
-        jLabel11.setText("Estado Civil:");
-
-        estadoCivilDetPagamento.setText("xxxxxxx");
-
-        jLabel13.setText("Endereço:");
-
-        enderecoDetPagamento.setText("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-
-        jLabel15.setText("CEP:");
-
-        cepDetPagamento.setText("xxxxx-xxx");
+        lblDadosCliente.setText("Dados do cliente");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -85,23 +62,8 @@ public class DetalhesCliente extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(nomeDetCliente)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cpfDetCliente))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(enderecoDetPagamento))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel15)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cepDetPagamento))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(estadoCivilDetPagamento)))
-                .addContainerGap(174, Short.MAX_VALUE))
+                    .addComponent(lblDadosCliente))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -109,35 +71,8 @@ public class DetalhesCliente extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(nomeDetCliente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(cpfDetCliente))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(estadoCivilDetPagamento))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(enderecoDetPagamento))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
-                    .addComponent(cepDetPagamento))
-                .addContainerGap(34, Short.MAX_VALUE))
-        );
-
-        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 303, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 177, Short.MAX_VALUE)
+                .addComponent(lblDadosCliente)
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -159,13 +94,16 @@ public class DetalhesCliente extends javax.swing.JFrame {
         jLabel26.setText("Dia do vencimento");
 
         btnEditarDetPagamento.setText("Editar");
-
-        btnExcluirDetPagamento.setText("Excluir");
-
-        jButton2.setText("Voltar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnEditarDetPagamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnEditarDetPagamentoActionPerformed(evt);
+            }
+        });
+
+        btnVoltarDetPagamento.setText("Voltar");
+        btnVoltarDetPagamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarDetPagamentoActionPerformed(evt);
             }
         });
 
@@ -180,11 +118,9 @@ public class DetalhesCliente extends javax.swing.JFrame {
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnVoltarDetPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnEditarDetPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnExcluirDetPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btnEditarDetPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel17)
@@ -204,7 +140,7 @@ public class DetalhesCliente extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
@@ -213,11 +149,10 @@ public class DetalhesCliente extends javax.swing.JFrame {
                     .addComponent(parcelasDetPagamento)
                     .addComponent(jLabel26)
                     .addComponent(vencimentoDetPagamento))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                .addGap(37, 37, 37)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEditarDetPagamento)
-                    .addComponent(btnExcluirDetPagamento)
-                    .addComponent(jButton2))
+                    .addComponent(btnVoltarDetPagamento))
                 .addGap(19, 19, 19))
         );
 
@@ -230,10 +165,7 @@ public class DetalhesCliente extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -242,9 +174,7 @@ public class DetalhesCliente extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -253,9 +183,15 @@ public class DetalhesCliente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btnVoltarDetPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarDetPagamentoActionPerformed
+        Home home = new Home();
+        home.setVisible(true);
+    }//GEN-LAST:event_btnVoltarDetPagamentoActionPerformed
+
+    private void btnEditarDetPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarDetPagamentoActionPerformed
+        EditarCliente editarCliente = new EditarCliente();
+        editarCliente.setVisible(true);
+    }//GEN-LAST:event_btnEditarDetPagamentoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -294,26 +230,17 @@ public class DetalhesCliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEditarDetPagamento;
-    private javax.swing.JButton btnExcluirDetPagamento;
-    private javax.swing.JLabel cepDetPagamento;
-    private javax.swing.JLabel cpfDetCliente;
+    private javax.swing.JButton btnVoltarDetPagamento;
     private javax.swing.JTextPane descricaoDetPagamento;
-    private javax.swing.JLabel enderecoDetPagamento;
-    private javax.swing.JLabel estadoCivilDetPagamento;
     private javax.swing.JLabel honorariosDetPagamento;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblDadosCliente;
     private javax.swing.JLabel nomeDetCliente;
     private javax.swing.JLabel parcelasDetPagamento;
     private javax.swing.JLabel vencimentoDetPagamento;

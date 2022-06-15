@@ -52,9 +52,9 @@ public class CadastroCliente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dota & Dotinha Advogados Associados", 2, 0, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dota & Dotinha Advogados Associados", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar cliente", 2, 0));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar cliente", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
 
         jLabel1.setText("Nome");
 
@@ -109,7 +109,7 @@ public class CadastroCliente extends javax.swing.JFrame {
                 .addContainerGap(42, Short.MAX_VALUE))
         );
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Descrição do caso", 2, 0));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Descrição do caso", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
 
         campoDescricaoCasoCadastroCliente.setColumns(20);
         campoDescricaoCasoCadastroCliente.setRows(5);
@@ -147,6 +147,11 @@ public class CadastroCliente extends javax.swing.JFrame {
         });
 
         jButton2.setText("Voltar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -266,6 +271,11 @@ public class CadastroCliente extends javax.swing.JFrame {
         clienteService.cadastrarCliente(nome, estadoCivil, endereco, cpf);
            
     }//GEN-LAST:event_btnCadastrarActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Home home = new Home();
+        home.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
