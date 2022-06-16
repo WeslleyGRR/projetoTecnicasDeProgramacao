@@ -43,7 +43,15 @@ public class ClienteService {
        
        
     }
-
+    
+       public void DeletarCliente(String cpf){
+        Cliente cliente = new Cliente();
+        cliente.setCpf(cpf);
+        ClienteDao clienteDao = new ClienteDao();
+       clienteDao.deletarCliente(cliente);
+       
+       
+    }
     public void mostrarCliente(String nome, String cpf, String endereco, String estado_civil) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
