@@ -18,42 +18,51 @@ import javax.swing.JOptionPane;
  */
 public class ClienteDao {
     
-     public void salvarCliente (Cliente cliente){
+     public int salvarCliente (Cliente cliente){
          
-          System.out.print("teste1");
          Connection connection = MysqlConnect.getConection();
-         System.out.print("teste2");
+   
         PreparedStatement statement = null;
+        int lastId = 0;
         
-        System.out.print("teste4");
+       
         try {
             String sql = "insert into cliente (nome, cpf, endereco, estado_civil) values(?,?,?,?)";
-            statement = connection.prepareStatement(sql);
-            System.out.print("teste42");
+            statement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+
             statement.setString(1, cliente.getNome());
             statement.setString(2, cliente.getCpf());
             statement.setString(3, cliente.getEndereco());
             statement.setString(4, cliente.getEstadoCivil());
             
-            statement.execute();
-            System.out.print("teste5");
+            
+            statement.executeUpdate();
+            
+            ResultSet rs = statement.getGeneratedKeys();
+                    if (rs.next()) {
+                        lastId = rs.getInt(1);
+                         
+                         
+                    }
+            
             statement.close();
-
-
+               
+         
         }catch (SQLException e){
        
             JOptionPane.showMessageDialog(null, e);
 
         }
+        return lastId;
     }
-     public void DeletarCliente(Cliente cliente){
+     public Boolean DeletarCliente(Cliente cliente){
          
-         Connection connection = MysqlConnect.getConection();
+        Connection connection = MysqlConnect.getConection();
         PreparedStatement statement = null;
         try {
-            String sql = "DELETE FROM 'cliente' where cpf = ? ";
+            String sql = "DELETE  FROM cliente WHERE cpf =" +cliente.getCpf();
             statement = connection.prepareStatement(sql);
-            statement.setString(2, cliente.getCpf());
+           
             statement.execute();
             statement.close();
         }catch (SQLException e){
@@ -61,26 +70,23 @@ public class ClienteDao {
             JOptionPane.showMessageDialog(null, e);
 
         }
+        return true;
     }
 
     public Cliente BuscarCliente(Cliente cliente) {
          Connection connection = MysqlConnect.getConection();
         PreparedStatement statement = null;
         try {
-            String sql = "SELECT * FROM `cliente` WHERE cpf = ?";
+            String sql = "SELECT * FROM `cliente` WHERE cpf ="+ cliente.getCpf();
             statement = connection.prepareStatement(sql);
-            statement.setString(1, cliente.getCpf());
+//            statement.setString(1, cliente.getCpf());
+            
             ResultSet rs = statement.executeQuery(sql);
              while(rs.next())
-             {   
-               
-                 
-                 cliente.setEndereco(rs.getString("endereco"));
-                 cliente.setNome(rs.getString("nome"));
-                 cliente.setEstadoCivil(rs.getString("estado_civil"));
-                 
-                 
-              
+             {   cliente.setEndereco(rs.getString(5));
+                 cliente.setNome(rs.getString(2));
+                 cliente.setEstadoCivil(rs.getString(3));
+                 cliente.setId(rs.getInt(1));
              }
             statement.close();
         }catch (SQLException e){

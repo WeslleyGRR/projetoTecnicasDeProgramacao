@@ -4,8 +4,9 @@
  */
 package Service;
 
-import java.math.BigDecimal;
-import java.sql.Date;
+import Conexao.CasoDAO;
+import Model.Caso;
+import Model.Cliente;
 
 /**
  *
@@ -13,10 +14,35 @@ import java.sql.Date;
  */
 public class CasoService{
     
-    public void cadastrarCaso(String descricao,BigDecimal valorHonorario, Date data, String tipo){}
+    public void cadastrarCaso(String descricao,double valorHonorario, int data, int idCliente, int parcelas){
+    Caso caso = new Caso();
+    caso.setDescicao(descricao);
+    caso.setValorHonorario(valorHonorario);
+    caso.setDiaVencimento(data);
+    caso.setIdCliente(idCliente);
+    caso.setParcelas(parcelas);
+    CasoDAO casoDao = new CasoDAO();
+    
+    casoDao.cadastrarCaso(caso);
+    }
     public void buscarCaso(){}
     public void deletarCaso(){}
     public void atualizarCaso(){}
+
+    public Caso buscarCaso(int id) {
+         CasoDAO casoDao = new CasoDAO();
+         Caso caso = new Caso();
+         caso.setIdCliente(id);
+         
+         return casoDao.buscarCaso(caso);
+    }
+
+    void deletarCaso(Cliente buscarCliente) {
+         CasoDAO casoDao = new CasoDAO();
+         Caso caso = new Caso();
+         caso.setIdCliente(buscarCliente.getId());
+         casoDao.deleteCaso(caso);
+    }
          
     
 }

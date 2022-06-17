@@ -15,10 +15,6 @@ public class Cliente {
  private String cpf;
  private String endereco;
  private String estadoCivil;
- private String telefone;
- private String cep;
- private String naturalidade; 
- 
     /**
      * @return the nome
      */
@@ -74,49 +70,6 @@ public class Cliente {
     public void setEstadoCivil(String estadoCivil) {
         this.estadoCivil = estadoCivil;
     }
-
-    /**
-     * @return the telefone
-     */
-    public String getTelefone() {
-        return telefone;
-    }
-
-    /**
-     * @param telefone the telefone to set
-     */
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
-    /**
-     * @return the cep
-     */
-    public String getCep() {
-        return cep;
-    }
-
-    /**
-     * @param cep the cep to set
-     */
-    public void setCep(String cep) {
-        this.cep = cep;
-    }
-
-    /**
-     * @return the naturalidade
-     */
-    public String getNaturalidade() {
-        return naturalidade;
-    }
-
-    /**
-     * @param naturalidade the naturalidade to set
-     */
-    public void setNaturalidade(String naturalidade) {
-        this.naturalidade = naturalidade;
-    }
-
   
 
     /**
@@ -136,6 +89,8 @@ public class Cliente {
     /**
      * @return the cep
      */
-     
+     public String ToString(){
+         return ("Nome: "+ this.getNome()+ "\n"+ "cpf: "+ this.getCpf()+"\n"+"Endereço: " + this.getEndereco()+"\n"+ "Estado Civil: " +this.getEstadoCivil());
+     }
     
 }

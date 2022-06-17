@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 import javax.swing.SwingUtilities;
 import view.CadastroCliente;
 import view.Home;
-import view.Opcoes;
+
 
 /**
  *
@@ -27,8 +27,8 @@ public class JavaFXApplication2 extends Application {
     @Override
     public void start(Stage primaryStage) {
         SwingUtilities.invokeLater(() ->{
-            Opcoes opcoes = new Opcoes();
-            opcoes.setVisible(true);
+            Home home = new Home();
+            home.setVisible(true);
         });
        
        

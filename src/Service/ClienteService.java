@@ -12,7 +12,7 @@ import Model.Cliente;
  */
 public class ClienteService {
     
-    public void cadastrarCliente(String nome, String estadoCivil,String endereco, String cpf){
+    public int cadastrarCliente(String nome, String estadoCivil,String endereco, String cpf){
         Cliente cliente  = new Cliente();
         cliente.setNome(nome);
         cliente.setCpf(cpf);
@@ -22,24 +22,25 @@ public class ClienteService {
        
         ClienteDao clienteDao = new ClienteDao();
       
-       clienteDao.salvarCliente(cliente);
+      
+       return  clienteDao.salvarCliente(cliente);
             
     }
     
-    public void deletarCliente(String cpf){
+    public Boolean deletarCliente(String cpf){
         Cliente cliente = new Cliente();
         cliente.setCpf(cpf);
         ClienteDao clienteDao = new ClienteDao();
-      
-       clienteDao.DeletarCliente(cliente);
-    
+        CasoService caso = new CasoService();
+        caso.deletarCaso(clienteDao.BuscarCliente(cliente));
+      return  clienteDao.DeletarCliente(clienteDao.BuscarCliente(cliente)); 
     }
     
-    public void buscaCliente(String cpf){
+    public Cliente buscaCliente(String cpf){
         Cliente cliente = new Cliente();
         cliente.setCpf(cpf);
         ClienteDao clienteDao = new ClienteDao();
-       clienteDao.BuscarCliente(cliente);
+       return clienteDao.BuscarCliente(cliente);
        
        
     }

@@ -15,9 +15,10 @@ public class Caso {
     private int id;
     private int idCliente;
     private String descicao;
-    private BigDecimal valorHonorario;
-    private Date data;
-    private String tipo;
+    private double valorHonorarios;
+    private int parcelas;
+    private int diaVencimento;
+
 
     /**
      * @return the descicao
@@ -36,44 +37,18 @@ public class Caso {
     /**
      * @return the valorHonorario
      */
-    public BigDecimal getValorHonorario() {
-        return valorHonorario;
+    public double getValorHonorarios() {
+        return valorHonorarios;
     }
 
     /**
      * @param valorHonorario the valorHonorario to set
      */
-    public void setValorHonorario(BigDecimal valorHonorario) {
-        this.valorHonorario = valorHonorario;
+    public void setValorHonorario(double valorHonorario) {
+        this.valorHonorarios = valorHonorario;
     }
 
-    /**
-     * @return the data
-     */
-    public Date getData() {
-        return data;
-    }
-
-    /**
-     * @param data the data to set
-     */
-    public void setData(Date data) {
-        this.data = data;
-    }
-
-    /**
-     * @return the tipo
-     */
-    public String getTipo() {
-        return tipo;
-    }
-
-    /**
-     * @param tipo the tipo to set
-     */
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
+    
 
     /**
      * @return the id
@@ -94,6 +69,34 @@ public class Caso {
      */
     public void setIdCliente(int idCliente) {
         this.idCliente = idCliente;
+    }
+
+    /**
+     * @return the diaVencimento
+     */
+    public int getDiaVencimento() {
+        return diaVencimento;
+    }
+
+    /**
+     * @param diaVencimento the diaVencimento to set
+     */
+    public void setDiaVencimento(int diaVencimento) {
+        this.diaVencimento = diaVencimento;
+    }
+
+    /**
+     * @return the parcelas
+     */
+    public int getParcelas() {
+        return parcelas;
+    }
+
+    /**
+     * @param parcelas the parcelas to set
+     */
+    public void setParcelas(int parcelas) {
+        this.parcelas = parcelas;
     }
     
 }
